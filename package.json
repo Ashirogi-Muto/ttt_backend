@@ -1,0 +1,16 @@
+{
+	"name": "ttt_backend",
+	"version": "1.0.0",
+	"description": "Back end for TTT",
+	"main": "server.js",
+	"dependencies": {
+		"body-parser": "~1.4.2",
+		"express": "~4.5.1",
+		"method-override": "~2.0.2"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Kshitij Pandey",
+	"license": "ISC"
+}
