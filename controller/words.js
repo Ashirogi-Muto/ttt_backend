@@ -1,11 +1,12 @@
 const http = require('http');
 const request = require('request');
 module.exports.findWordCount = (req, res) => {
+	console.log('reach', req.body);
 	var data = '';
 	let words = [];
 	let wordCounts = {}; //make an empty object to store the words and their counts
 	let sortable = []; //array to store sorted counts
-	let userCount = req.body.count;
+	let userCount = req.body.count || 1;
 	request('http://terriblytinytales.com/test.txt', (err, response, body) => {
 		if (err) {
 			return res.json({
@@ -27,7 +28,6 @@ module.exports.findWordCount = (req, res) => {
 			return b[1] - a[1]; //sort the array in DESC order
 		});
 
-		console.log('>>>>>', userCount, sortable.slice(0, userCount));
 		return res.json({
 			'status': true,
 			'message': 'success',
